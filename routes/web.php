@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\adminController;
+use App\Http\Controllers\categoryController;
 use App\Http\Controllers\clientController;
+use Facade\FlareClient\Http\Client;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +18,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [clientController::class,'home']);
+Route::get('/shop',[clientController::class,'shop']);
+Route::get('/cart',[clientController::class,'cart']);
+Route::get('/checkout',[clientController::class,'checkout']);
+Route::get('/contact',[clientController::class,'contact']);
+Route::get('/login',[clientController::class,'login']);
+Route::get('/dashboard',[adminController::class,'admin']);
+Route::get('/addcategory',[categoryController::class,'addCategory']);
+Route::get('/category',[categoryController::class,'Category']);
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

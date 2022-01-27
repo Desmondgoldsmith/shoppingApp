@@ -34,7 +34,7 @@
 
 
     // Vendor carousel
-    $('.vendor-carousel').owlCarousel({
+    $('.frontend/vendor-carousel').owlCarousel({
         loop: true,
         margin: 29,
         nav: false,
