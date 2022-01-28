@@ -1,11 +1,11 @@
+@section('title')
+    category List
+@endsection
+
 @extends('adminIncludes.navbar')
 @section('content')
-     <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <section class="content">
-      {{-- <div class="container-fluid"> --}}
-    <h2><b>Category</b></h2>    
-    <table class="table table-bordered">
+@include('adminIncludes.header') 
+<table class="table table-bordered">
         <thead>
             <tr>
               <th scope="col">Number</th>
@@ -17,18 +17,18 @@
             <tr>
               <th scope="row">1</th>
               <td>Rice</td>
-              <td><button class="btn btn-info">edit</button><button class="btn btn-danger">delete</button></td>              
+              <td><a href="#" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>              
             </tr>
             <tr>
               <th scope="row">1</th>
               <td>Rice</td>
-              <td><button class="btn btn-info">edit</button><button class="btn btn-danger">delete</button></td>              
+              <td><a href="#" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>              
             
             </tr>
             <tr>
               <th scope="row">1</th>
               <td>Rice</td>
-              <td><button class="btn btn-info">edit</button><button class="btn btn-danger">delete</button></td>              
+              <td><a href="#" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>              
             
             </tr>
           </tbody>

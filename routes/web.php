@@ -3,6 +3,7 @@
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\categoryController;
 use App\Http\Controllers\clientController;
+use App\Http\Controllers\sliderController;
 use Facade\FlareClient\Http\Client;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +27,9 @@ Route::get('/login',[clientController::class,'login']);
 Route::get('/dashboard',[adminController::class,'admin']);
 Route::get('/addcategory',[categoryController::class,'addCategory']);
 Route::get('/category',[categoryController::class,'Category']);
-
+Route::get('/addSlider',[sliderController::class,'addSlider']);
+Route::get('/slider',[sliderController::class,'slider']);
+Route::get('/addProduct',[sliderController::class,'addProduct']);
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');

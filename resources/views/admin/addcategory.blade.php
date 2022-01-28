@@ -1,11 +1,15 @@
+@section('title')
+    Category
+@endsection
 @extends('adminIncludes.navbar')
 @section('content')
      <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <section class="content">
+  {{-- <div class="content-wrapper">
+    <section class="content"> --}}
       {{-- <div class="container-fluid"> --}}
-    <h2><b>Category</b></h2>    
-    <div class="card">
+        @include('adminIncludes.header') 
+        {{-- <h2><b>Category</b></h2>     --}}
+    <div class="card col-md-12">
         <div class="container bg-primary"><h3>Add Category</h3></div>
     <br>
         <form action="">
