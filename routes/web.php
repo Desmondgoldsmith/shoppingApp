@@ -3,6 +3,7 @@
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\categoryController;
 use App\Http\Controllers\clientController;
+use App\Http\Controllers\mainCategoryController;
 use App\Http\Controllers\sliderController;
 use Facade\FlareClient\Http\Client;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,8 @@ Route::get('/category',[categoryController::class,'Category']);
 Route::get('/addSlider',[sliderController::class,'addSlider']);
 Route::get('/slider',[sliderController::class,'slider']);
 Route::get('/addProduct',[sliderController::class,'addProduct']);
+Route::post('/addCategory',[mainCategoryController::class,'store']);
+// Route::post('/category',[mainCategoryController::class,'index']);
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\category;
 use Illuminate\Http\Request;
 
 class categoryController extends Controller
@@ -13,6 +14,14 @@ class categoryController extends Controller
     
     public function Category(){
 
-        return view('admin.catigorylist');
-    }
+        $category = category::all();
+        return view('admin.catigoryList')->with('category',$category);
+      }
+
+    //   public function categories()
+    // {
+    //   $category = category::all();
+    //   return view('admin.catigoryList')->with('category',$category);
+
+    // }
 }

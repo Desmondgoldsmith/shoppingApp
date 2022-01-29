@@ -31,7 +31,7 @@
     {{ csrf_field() }}
     {{-- <form action=""> --}}
     <div class="container">
-
+         {{-- {{Form::hidden('id')}} --}}
         <div class="form-group">
           {{Form::label('','Add Category',['for'=>'category'])}} 
           {{-- <label for="category">Add Category</label> --}}

@@ -13,24 +13,15 @@
               <th scope="col">action</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Rice</td>
-              <td><a href="#" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>              
-            </tr>
-            <tr>
-              <th scope="row">1</th>
-              <td>Rice</td>
-              <td><a href="#" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>              
+          <-tbody>
+            @foreach ($category as $category)
+               <tr>
+              <th scope="row">{{$category->id}}</th>
+              <td>{{$category->category}}</td>
+              <td><a href="{{URL('editCategory/'.$category->id)}}" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="{{URL('deleteCategory')}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>              
+            </tr> 
+            @endforeach
             
-            </tr>
-            <tr>
-              <th scope="row">1</th>
-              <td>Rice</td>
-              <td><a href="#" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>              
-            
-            </tr>
           </tbody>
       </table>
     </div>
