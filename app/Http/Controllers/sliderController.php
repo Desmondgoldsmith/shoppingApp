@@ -15,8 +15,5 @@ class sliderController extends Controller
       
         return view('admin.slider');
     }
-    public function addProduct(){
-      
-        return view('admin.addProduct');
-    }
+    
 }

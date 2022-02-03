@@ -4,6 +4,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\categoryController;
 use App\Http\Controllers\clientController;
 use App\Http\Controllers\mainCategoryController;
+use App\Http\Controllers\productController;
 use App\Http\Controllers\sliderController;
 use Facade\FlareClient\Http\Client;
 use Illuminate\Support\Facades\Route;
@@ -30,8 +31,14 @@ Route::get('/addcategory',[categoryController::class,'addCategory']);
 Route::get('/category',[categoryController::class,'Category']);
 Route::get('/addSlider',[sliderController::class,'addSlider']);
 Route::get('/slider',[sliderController::class,'slider']);
-Route::get('/addProduct',[sliderController::class,'addProduct']);
+Route::get('/addProduct',[productController::class,'addProduct']);
+Route::get('/viewProduct',[productController::class,'viewProduct']);
+Route::post('/saveProduct',[productController::class,'saveProduct']);
 Route::post('/addCategory',[mainCategoryController::class,'store']);
+Route::get('/editCategory/{id}',[mainCategoryController::class,'edit']);
+Route::post('/editCategory',[mainCategoryController::class,'update']);
+// Route::resource('/products','App\Http\Controllers\productController');   
+
 // Route::post('/category',[mainCategoryController::class,'index']);
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

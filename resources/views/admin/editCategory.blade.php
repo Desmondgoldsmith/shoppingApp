@@ -24,21 +24,21 @@
            </ul>
          </div>
       @endif  
-        <div class="container bg-primary"><h3>Add Category</h3></div>
+        <div class="container bg-primary"><h3>Update Category</h3></div>
     <br>
         
-    {!!Form::open(['action'=>'App\Http\Controllers\mainCategoryController@store', 'method'=>'POST'])!!}   
+    {!!Form::open(['action'=>'App\Http\Controllers\mainCategoryController@update', 'method'=>'POST'])!!}   
     {{ csrf_field() }}
     {{-- <form action=""> --}}
     <div class="container">
-         {{-- {{Form::hidden('id')}} --}}
+         {{Form::hidden('id',$categories->id)}}
         <div class="form-group">
-          {{Form::label('','Add Category',['for'=>'category'])}} 
+          {{Form::label('','Update Category',['for'=>'category'])}} 
           {{-- <label for="category">Add Category</label> --}}
-          {{Form::text('category','',['class'=>'form-control', 'id'=>'category', 'placeholder'=>'add category', 'name'=>'category'])}}
+          {{Form::text('category',$categories->category,['class'=>'form-control', 'id'=>'category', 'placeholder'=>'add category', 'name'=>'category'])}}
             {{-- <input type="text" class="form-control" id="category" placeholder="add category">     --}}
           </div>
-          {{Form::submit('Save',['class'=>'btn btn-primary'])}}
+          {{Form::submit('Update',['class'=>'btn btn-primary'])}}
           {{-- <button type="submit" class="btn btn-primary">Submit</button> --}}
         
         </div>

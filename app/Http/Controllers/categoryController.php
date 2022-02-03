@@ -14,8 +14,8 @@ class categoryController extends Controller
     
     public function Category(){
 
-        $category = category::all();
-        return view('admin.catigoryList')->with('category',$category);
+        $categories = category::all();
+        return view('admin.catigoryList')->with('categories',$categories);
       }
 
     //   public function categories()

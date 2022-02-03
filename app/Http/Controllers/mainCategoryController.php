@@ -15,7 +15,7 @@ class mainCategoryController extends Controller
     public function index()
     {
         $categories = category::all();
-      return view('admin.catigoryList')->with('categories',$categories);
+      return view('admin.editCategory')->with('categories',$categories);
     }
 
     /**
@@ -71,7 +71,10 @@ class mainCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = category::find($id);
+
+        return view('admin.editCategory')->with('categories',$categories);
+   
     }
 
     /**
@@ -81,9 +84,20 @@ class mainCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $this->validate($request,
+        [
+            'category'=>'required'
+        ]
+
+    );
+    
+    $category = category::find($request->input('id'));
+    $category->category = $request->input('category');
+    $category->update();
+    
+    return redirect('/category')->with('status','Updated Successfully');
     }
 
     /**

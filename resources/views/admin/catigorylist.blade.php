@@ -5,6 +5,13 @@
 @extends('adminIncludes.navbar')
 @section('content')
 @include('adminIncludes.header') 
+
+@if(Session::has('status'))
+ <div class="alert alert-success">
+   {{Session::get('status')}}   
+</div>  
+@endif
+
 <table class="table table-bordered">
         <thead>
             <tr>
@@ -13,8 +20,8 @@
               <th scope="col">action</th>
             </tr>
           </thead>
-          <-tbody>
-            @foreach ($category as $category)
+          <tbody>
+            @foreach ($categories as $category)
                <tr>
               <th scope="row">{{$category->id}}</th>
               <td>{{$category->category}}</td>
