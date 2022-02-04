@@ -36,7 +36,11 @@ Route::get('/viewProduct',[productController::class,'viewProduct']);
 Route::post('/saveProduct',[productController::class,'saveProduct']);
 Route::post('/addCategory',[mainCategoryController::class,'store']);
 Route::get('/editCategory/{id}',[mainCategoryController::class,'edit']);
+Route::get('/deleteCategory/{id}',[mainCategoryController::class,'destroy']);
 Route::post('/editCategory',[mainCategoryController::class,'update']);
+Route::get('/editProduct/{id}',[productController::class,'editProduct']);
+Route::get('/deleteProduct/{id}',[productController::class,'delete']);
+Route::post('/editProduct',[productController::class,'update']);
 // Route::resource('/products','App\Http\Controllers\productController');   
 
 // Route::post('/category',[mainCategoryController::class,'index']);

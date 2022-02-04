@@ -25,7 +25,7 @@
                <tr>
               <th scope="row">{{$category->id}}</th>
               <td>{{$category->category}}</td>
-              <td><a href="{{URL('editCategory/'.$category->id)}}" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="{{URL('deleteCategory')}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>              
+              <td><a href="{{URL('editCategory/'.$category->id)}}" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="{{URL('deleteCategory/'.$category->id)}}" class="btn btn-danger" onclick="return confirm('Are You Sure You Want Delete?')"><i class="fas fa-trash-alt"></i></a></td>              
             </tr> 
             @endforeach
             

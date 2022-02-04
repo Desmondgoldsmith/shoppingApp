@@ -12,8 +12,14 @@
       <div class="col-md-11">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Bordered Table</h3>
+            <h3 class="card-title">View Products</h3>
           </div>
+          @if (Session::has('status'))
+          <div class="alert alert-success">
+            {{Session::get('status')}}
+          </div>
+              
+          @endif
           <!-- /.card-header -->
           <div class="card-body">
             <table class="table table-bordered">
@@ -37,7 +43,7 @@
                   <td>{{$product->productName}}</td>
                   <td>{{$product->productCategory}}</td>
                   <td>GHc {{$product->productPrice}}</td>
-                  <td><a href="{{URL('/edit')}}" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="{{URL('#')}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>              
+                  <td><a href="{{URL('editProduct/'.$product->id)}}" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="{{URL('deleteProduct/'.$product->id)}}" class="btn btn-danger" onclick="return confirm('Are You Sure You Want Delete?')"><i class="fas fa-trash-alt"></i></a></td>              
           
                 
                 </tr>

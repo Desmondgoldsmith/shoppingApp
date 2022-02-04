@@ -108,6 +108,10 @@ class mainCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = category::find($id);
+        $category->delete();
+
+        return redirect('/category')->with('status','Category Deleted Successfully');
+
     }
 }
