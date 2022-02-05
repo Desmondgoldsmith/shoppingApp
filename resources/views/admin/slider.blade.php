@@ -28,42 +28,22 @@
                   </tr>
                 </thead>
                 <tbody>
-                  
+                  @foreach ($sliders as $slider)
+                      
                     <tr>
-                    <td>1.</td>
-                    <td>image</td>
                     <td>
-                        Update software
+                      {{$slider->id}}</td>
+                    <td>
+                      <img src="/storage/sliderImages/{{$slider->sliderImage}}" style="height:80px;width:80px" class="img-circle elevation-2" alt="{{$slider->sliderImage}}">
                     </td>
-                    <td>Update software</td>
-                    <td><a href="#" class="btn btn-warning">Activate</a><a href="#" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
+                    <td>{{$slider->sliderDescription1}}</td>
+                    <td>
+                        {{$slider->sliderDescription2}}
+                    </td>
+                    <td><a href="{{Url('updateSlider/'.$slider->id)}}" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
+                    @endforeach
                   </tr>
-                  <tr>
-                    <td>1.</td>
-                    <td>image</td>
-                    <td>
-                        Update software
-                    </td>
-                    <td>Update software</td>
-                    <td><a href="#" class="btn btn-warning">Activate</a><a href="#" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
-                  </tr>
-                  <tr>
-                    <td>1.</td>
-                    <td>image</td>
-                    <td>
-                        Update software
-                    </td>
-                    <td>Update software</td>
-                    <td><a href="#" class="btn btn-warning">Activate</a><a href="#" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td></tr>
-                  <tr>
-                    <td>1.</td>
-                    <td>image</td>
-                    <td>
-                        Update software
-                    </td>
-                    <td>Update software</td>
-                    <td><a href="#" class="btn btn-warning">Activate</a><a href="#" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>  </tr>
-                </tbody>
+                  </tbody>
               </table>
             </div>
             <!-- /.card-body -->

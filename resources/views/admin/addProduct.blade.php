@@ -17,12 +17,7 @@
                 <h3 class="card-title">Add Product</h3>
               </div>
 
-              @if(Session::has('status'))
-                <div class="alert alert-success">
-                 {{Session::get('status')}}
-                </div>
-              @endif
-              @if(count($errors)> 0)
+               @if(count($errors)> 0)
                 <div class="alert alert-danger">
                   <ul>
                     @foreach($errors->all() as $error)
@@ -32,6 +27,13 @@
                   
                 </div>
                  @endif
+                 
+                 @if(Session::has('status'))
+                <div class="alert alert-success">
+                 {{Session::get('status')}}
+                </div>
+              @endif
+             
 
                  {!!Form::Open(['action'=>'App\Http\Controllers\productController@saveProduct', 'method'=>'POST', 'enctype'=>'multipart/form-data' ])!!}
                  {{ csrf_field() }}

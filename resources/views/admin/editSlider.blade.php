@@ -1,5 +1,5 @@
 @section('title')
-    Add Slider
+    Update Slider
 @endsection
 @extends('adminIncludes.navbar')
 
@@ -15,7 +15,7 @@
             <!-- general form elements -->
             <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title">Add Slider</h3>
+                <h3 class="card-title">Update Slider</h3>
               </div>
               <!-- /.card-header -->
               
@@ -37,16 +37,17 @@
           </ul>
                
         @endif
-           {!!Form::Open(['action'=>'App\Http\Controllers\sliderController@save', 'method'=>'Post', 'enctype'=>'multipart/form-data'])!!}
+           {!!Form::Open(['action'=>'App\Http\Controllers\sliderController@update', 'method'=>'Post', 'enctype'=>'multipart/form-data'])!!}
             {{ csrf_field() }}    
            <div class="card-body">
+               {{Form::hidden('id',$sliders->id)}}
                   <div class="form-group">
                     {{Form::label('','Slider Description 1',['for'=>'sDesc1'])}}
-                    {{Form::text('sliderDescription1','',['class'=>'form-control','id'=>'sliderDescription','placeholder'=>'Enter Slider Description'])}}
+                    {{Form::text('sliderDescription1',$sliders->sliderDescription1,['class'=>'form-control','id'=>'sliderDescription','placeholder'=>'Enter Slider Description'])}}
                   </div>
                   <div class="form-group">
                     {{Form::label('','Slider Description 2',['for'=>'sDesc2'])}}
-                    {{Form::text('sliderDescription2','',['class'=>'form-control','id'=>'sliderDescription2','placeholder'=>'Enter Slider Description'])}}
+                    {{Form::text('sliderDescription2',$sliders->sliderDescription2,['class'=>'form-control','id'=>'sliderDescription2','placeholder'=>'Enter Slider Description'])}}
                     {{-- <label for="sDesc2">Slider Description 2</label>
                     <input type="text" class="form-control" id="sDesc2" placeholder="Enter Slider Description"> --}}
                   </div>
@@ -69,7 +70,7 @@
 
                 <div class="card-footer">
                   {{-- <button type="submit" class="btn btn-warning">Submit</button> --}}
-                {{Form::submit('Save',['class'=>'btn btn-warning','id'=>'submit'])}}
+                {{Form::submit('Update',['class'=>'btn btn-warning','id'=>'submit'])}}
                 </div>
                 {!!Form::close()!!}
               {{-- </form> --}}
