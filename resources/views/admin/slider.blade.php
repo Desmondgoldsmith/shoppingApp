@@ -16,6 +16,13 @@
               <h3 class="card-title">View Sliders</h3>
             </div>
             <!-- /.card-header -->
+
+        @if (Session::has('status'))
+          <div class="alert alert-success">
+            {{Session::get('status')}}
+          </div>
+        @endif
+
             <div class="card-body">
               <table class="table table-bordered">
                 <thead>
@@ -40,7 +47,7 @@
                     <td>
                         {{$slider->sliderDescription2}}
                     </td>
-                    <td><a href="{{Url('updateSlider/'.$slider->id)}}" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
+                    <td><a href="{{Url('updateSlider/'.$slider->id)}}" class="btn btn-info"> <i class="nav-icon fas fa-edit "></i></a><a href="{{Url('deleteSlider/'.$slider->id)}}" class="btn btn-danger" onclick="return confirm('Are You Sure You Want Delete?')"><i class="fas fa-trash-alt"></i></a></td>
                     @endforeach
                   </tr>
                   </tbody>

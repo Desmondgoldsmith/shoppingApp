@@ -75,4 +75,14 @@ class sliderController extends Controller
       return redirect('/slider')->with('status','Slider Saved Successfully');
       }
     
-}
+ public function terminate($id){
+    $slider = Slider::find($id);
+    $slider->delete();
+
+    return back()->with('status','Slider Deleted Successfully');
+     
+
+ }
+
+
+    }

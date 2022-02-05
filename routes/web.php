@@ -34,6 +34,7 @@ Route::post('/saveSlider',[sliderController::class,'save']);
 Route::get('/slider',[sliderController::class,'slider']);
 Route::get('/updateSlider/{id}',[sliderController::class,'edit']);
 Route::post('/updateSlider',[sliderController::class,'update']);
+Route::get('/deleteSlider/{id}',[sliderController::class,'terminate']);
 Route::get('/addProduct',[productController::class,'addProduct']);
 Route::get('/viewProduct',[productController::class,'viewProduct']);
 Route::post('/saveProduct',[productController::class,'saveProduct']);
