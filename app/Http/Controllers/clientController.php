@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class clientController extends Controller
 {
     public function home(){
-        return view('client.home');
+       $products = Product::all();
+       return view('client.home')->with('products',$products);
     }
 
     public function shop(){
