@@ -95,7 +95,13 @@ class productController extends Controller
             return  redirect('/viewProduct')->with('status','Product Updated Successfully');
      
     }
+    
+    public function prodCat($category){
+      $products = Product::all()->where('productCategory',$category);
+      $categories = category::all();
 
+      return view('client.shop')->with('products',$products)->with('categories',$categories);
+    }
 
     public function delete($id){
       $product = Product::find($id);

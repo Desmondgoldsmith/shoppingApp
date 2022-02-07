@@ -30,7 +30,7 @@
 			<div class="wrap-login100 p-t-70 p-b-30">
 				<form class="login100-form validate-form">
 					<div class="login100-form-avatar">
-						<img src="frontend/Login/images/avatar-01.jpg" alt="AVATAR">
+						<img src="{{asset('frontend/Login/images/avatar-01.jpg" alt="AVATAR">
 					</div>
 
 					<span class="login100-form-title p-t-20 p-b-45">
@@ -82,14 +82,14 @@
 
 	
 <!--===============================================================================================-->	
-	<script src="frontend/Login/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="{{asset('frontend/Login/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="frontend/Login/vendor/bootstrap/js/popper.js"></script>
-	<script src="frontend/Login/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="{{asset('frontend/Login/vendor/bootstrap/js/popper.js"></script>
+	<script src="{{asset('frontend/Login/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="frontend/Login/vendor/select2/select2.min.js"></script>
+	<script src="{{asset('frontend/Login/vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script src="frontend/Login/vendor/main.js"></script>
+	<script src="{{asset('frontend/Login/vendor/main.js"></script>
 
 </body>
 </html>
