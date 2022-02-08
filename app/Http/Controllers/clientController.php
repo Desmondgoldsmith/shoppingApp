@@ -21,10 +21,13 @@ class clientController extends Controller
     }
 
     public function shop(){
-        return view('client.shop');
+        $products = Product::all();
+        $categories = category::all();
+
+        return view('client.shop')->with('products',$products)->with('categories',$categories);
     }
 
-    public function cart(Request $request,$id){
+    public function cart($id){
      $products = Product::find($id);
      $categories = category::all();
      $sliders = Slider::all();
@@ -33,8 +36,9 @@ class clientController extends Controller
      $cart = new cart($oldCart);
      $cart->add($products,$id);
      Session::put('cart',$cart);
-     dd(Session::get('cart'));
-     return view('client.cart')->with('products',$products)->with('categories',$categories)->with('sliders',$sliders);
+    //  dd(Session::get('cart'));
+     return back();
+    //  return view('client.cart')->with('products',$products)->with('categories',$categories)->with('sliders',$sliders);
     }
 
     public function checkout(){
