@@ -46,6 +46,7 @@ Route::get('/editProduct/{id}',[productController::class,'editProduct']);
 Route::get('/deleteProduct/{id}',[productController::class,'delete']);
 Route::post('/editProduct',[productController::class,'update']);
 Route::get('/viewProductCat/{category}',[productController::class,'prodCat']);
+Route::get('/addtoCart/{id}',[clientController::class,'cart']);
 // Route::post('/editProduct',[productController::class,'update']);
 // Route::resource('/products','App\Http\Controllers\productController');   
 
