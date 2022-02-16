@@ -20,6 +20,11 @@ class clientController extends Controller
        return view('client.home')->with('products',$products)->with('sliders',$sliders)->with('categories',$categories);
     }
 
+//   public function cart(){
+//       $categories = category::all();
+//       return view('client.cart')->with('categories',$categories);
+//   }
+
     public function shop(){
         $products = Product::all();
         $categories = category::all();
@@ -27,7 +32,7 @@ class clientController extends Controller
         return view('client.shop')->with('products',$products)->with('categories',$categories);
     }
 
-    public function cart($id){
+    public function addtoCart($id){
      $products = Product::find($id);
      $categories = category::all();
      $sliders = Slider::all();
@@ -38,7 +43,17 @@ class clientController extends Controller
      Session::put('cart',$cart);
     //  dd(Session::get('cart'));
      return back();
-    //  return view('client.cart')->with('products',$products)->with('categories',$categories)->with('sliders',$sliders);
+    }
+
+    public function cart(){
+      $categories = category::all();
+        if(!Session::has('cart')){
+            // return redirect('/');
+        }
+     $oldCart = Session::has('cart') ? Session::get('cart'):null;
+     $cart = new cart($oldCart);
+//   dd($cart->items);
+     return view('client.cart',['products'=>$cart->items])->with('categories',$categories);
     }
 
     public function checkout(){

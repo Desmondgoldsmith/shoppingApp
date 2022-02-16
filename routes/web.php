@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [clientController::class,'home']);
 Route::get('/shop',[clientController::class,'shop']);
 Route::get('/cart',[clientController::class,'cart']);
+// Route::get('/viewCart',[clientController::class,'viewCart']);
 Route::get('/checkout',[clientController::class,'checkout']);
 Route::get('/contact',[clientController::class,'contact']);
 Route::get('/login',[clientController::class,'login']);
@@ -46,7 +47,7 @@ Route::get('/editProduct/{id}',[productController::class,'editProduct']);
 Route::get('/deleteProduct/{id}',[productController::class,'delete']);
 Route::post('/editProduct',[productController::class,'update']);
 Route::get('/viewProductCat/{category}',[productController::class,'prodCat']);
-Route::get('/addtoCart/{id}',[clientController::class,'cart']);
+Route::get('/addtoCart/{id}',[clientController::class,'addtoCart']);
 // Route::post('/editProduct',[productController::class,'update']);
 // Route::resource('/products','App\Http\Controllers\productController');   
 
