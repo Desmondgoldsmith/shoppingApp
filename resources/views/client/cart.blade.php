@@ -57,13 +57,6 @@
                             <td class="align-middle">Ghc {{$product['productPrice'] * $product['qty'] }}</td>
                             <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
  </tr>
-  
-  <tr>
-      <td class="align-middle">
-                <h4>Cart Is Empty</h4>
-
-      </td>
-  </tr>
   @endforeach      
   @else            
     @endif
@@ -98,8 +91,8 @@
                     </div>
                     <div class="card-footer border-secondary bg-transparent">
                         <div class="d-flex justify-content-between mt-2">
-                            <h5 class="font-weight-bold">Total</h5>
-                            {{-- <h5 class="font-weight-bold">Ghc {{Session::get('cart')->totalPrice}}</h5> --}}
+                            <h5 class="font-weight-bold">Total </h5>
+                            <h5 class="font-weight-bold">Ghc {{Session::get('cart')->totalPrice}}</h5>
                         </div>
                         <a href="{{url('/checkout')}}"><button class="btn btn-block btn-primary my-3 py-3">Proceed To Checkout</button></a>
                     </div>

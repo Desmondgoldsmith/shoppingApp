@@ -20,10 +20,6 @@ class clientController extends Controller
        return view('client.home')->with('products',$products)->with('sliders',$sliders)->with('categories',$categories);
     }
 
-//   public function cart(){
-//       $categories = category::all();
-//       return view('client.cart')->with('categories',$categories);
-//   }
 
     public function shop(){
         $products = Product::all();
@@ -48,14 +44,14 @@ class clientController extends Controller
     public function cart(){
       $categories = category::all();
         if(!Session::has('cart')){
-            // return redirect('/');
+            return redirect('/');
         }
-     $oldCart = Session::has('cart') ? Session::get('cart'):null;
+     $oldCart = Session::get('cart');
      $cart = new cart($oldCart);
 //   dd($cart->items);
      return view('client.cart',['products'=>$cart->items])->with('categories',$categories);
-    }
 
+}
     public function checkout(){
 
         return view('client.checkout');
@@ -74,8 +70,6 @@ class clientController extends Controller
     public function dashboard(){
 
         return view('admin.dashboard');
-    }
-
-    
+    }       
 
 }

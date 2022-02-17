@@ -1,8 +1,6 @@
 <?php
 namespace App;
 
-use phpDocumentor\Reflection\Types\ArrayKey;
-
 class cart{
 
     public $items = null;
@@ -23,11 +21,12 @@ class cart{
         'productPrice' => $item->productPrice,'productImage'=>$item->productImage,
         'item'=>$item];
 
-        if($this->items){
+          if($this->items){
             if(array_key_exists($productId,$this->items)){
-                $storedItems = $this->items['productId'];
+                $storedItems = $this->items[$productId];
             }
         }
+
 
         $storedItem['qty']++;
         $storedItem['productId']= $productId;
@@ -36,7 +35,7 @@ class cart{
         $storedItem['productImage']= $item->productImage;
         $this->totalQuantity++;
         $this->totalPrice += $item->productPrice;
-        $this->items['productId'] = $storedItem;
+        $this->items[$productId] = $storedItem;
 
 
     }
