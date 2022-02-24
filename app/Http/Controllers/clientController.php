@@ -61,6 +61,23 @@ class clientController extends Controller
      return view('client.cart',['products'=>$cart->items])->with('categories',$categories);
 
 }
+
+  public function delete($id){
+    $oldCart = Session::has('cart') ? Session::get('cart'):null;
+    $cart = new cart($oldCart);
+    $cart->removeItem($id);
+
+    if(count($cart->items) > 0){
+     Session::put('cart',$cart); 
+    }else{
+        Session::forget('cart');
+    }
+
+    
+    return back();
+  }
+
+
     public function checkout(){
 
         return view('client.checkout');

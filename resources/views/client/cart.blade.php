@@ -60,7 +60,7 @@
                             </td>
                         </form>
                             <td class="align-middle">Ghc {{$product['productPrice'] * $product['qty']}}</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
+                            <td class="align-middle"><a class="btn btn-sm btn-primary" href="{{Url('delete/'.$product['productId'])}}"><i class="fa fa-times"></i></a></td>
  </tr>
   @endforeach      
   @else            
