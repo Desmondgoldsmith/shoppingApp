@@ -7,9 +7,7 @@ use Illuminate\Support\Facades\Session;
 use App\Models\Product;
 use App\Models\Slider;
 use App\cart;
-
 use Illuminate\Http\Request;
-
 class clientController extends Controller
 {
     public function home(){
@@ -40,6 +38,17 @@ class clientController extends Controller
     //  dd(Session::get('cart'));
      return back();
     }
+
+  public function updateQuantity(Request $request,$id){
+    $oldCart = Session::has('cart') ? Session::get('cart'):null;
+    $cart = new cart($oldCart);
+    // $quantity = $request->quantity;
+    // $product = Product::find($id);
+    $cart->updateCart($id,$request->quantity);
+    Session::put('cart',$cart); 
+    
+    return back();
+  }
 
     public function cart(){
       $categories = category::all();

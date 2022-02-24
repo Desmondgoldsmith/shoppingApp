@@ -42,5 +42,22 @@ class cart{
 
 
     }
+
+
+    public function updateCart($id, $qty){
+    // $this->items[$id]['qty'] = $quantity;
+    // $this->items[$id]['price'] = $quantity * $item->price;
+
+    // $this->totalQuantity = 0;
+    // foreach($this->items as $element) {
+    //     $this->totalQuantity += $element['qty'];
+    //     $this->totalPrice = $this->totalQuantity * $item->price;
+    // }
+        $this->totalQuantity -= $this->items[$id]['qty'];
+        $this->totalPrice -= $this->items[$id]['productPrice'] * $this->items[$id]['qty'];
+        $this->items[$id]['qty'] = $qty;
+        $this->totalQuantity += $qty;
+        $this->totalPrice += $this->items[$id]['productPrice']*$qty;        
+    }
 }
 ?>

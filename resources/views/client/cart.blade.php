@@ -39,21 +39,26 @@
                     <tr>
                             <td class="align-middle"><img src="{{asset('/storage/productImages/'. $product['productImage'])}}" alt="" style="width: 50px;">{{$product['productName']}}</td>
                             <td class="align-middle">Ghc {{$product['productPrice']}}</td>
-                            <td class="align-middle">
+                                    <form action="{{url('updateQuantity/'.$product['productId'])}}" method="post">
+                                      @csrf
+                                        <td class="align-middle">
                                 <div class="input-group quantity mx-auto" style="width: 100px;">
                                     <div class="input-group-btn">
+                                        {{-- <input type="number"  class="quantity form-control input-number " value="{{$product['qty']}}" > --}}
                                         <button class="btn btn-sm btn-primary btn-minus" >
                                         <i class="fa fa-minus"></i>
                                         </button>
                                     </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary text-center" value="{{$product['qty']}}">
+                                    <input type="text" name="quantity" class="form-control form-control-sm bg-secondary text-center" value="{{$product['qty']}}" min="1" max="100">
                                     <div class="input-group-btn">
                                         <button class="btn btn-sm btn-primary btn-plus">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
                                 </div>
+                                <input type="submit" class="btn btn btn-success" value="Update">
                             </td>
+                        </form>
                             <td class="align-middle">Ghc {{$product['productPrice'] * $product['qty']}}</td>
                             <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
  </tr>
