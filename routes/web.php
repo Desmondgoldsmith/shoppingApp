@@ -27,6 +27,7 @@ Route::get('/cart',[clientController::class,'cart']);
 Route::get('/checkout',[clientController::class,'checkout']);
 Route::get('/contact',[clientController::class,'contact']);
 Route::get('/login',[clientController::class,'login']);
+Route::get('/register',[clientController::class,'register']);
 Route::get('/dashboard',[adminController::class,'admin']);
 Route::get('/addcategory',[categoryController::class,'addCategory']);
 Route::get('/category',[categoryController::class,'Category']);

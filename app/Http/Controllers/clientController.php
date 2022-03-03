@@ -96,7 +96,11 @@ class clientController extends Controller
 
         return view('client.login');
     }
-    
+
+    public function register(){
+
+      return view('client.register');
+    }
     public function dashboard(){
 
         return view('admin.dashboard');
