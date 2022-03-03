@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\Slider;
 use App\cart;
 use Illuminate\Http\Request;
+
 class clientController extends Controller
 {
     public function home(){
@@ -79,8 +80,11 @@ class clientController extends Controller
 
 
     public function checkout(){
-
-        return view('client.checkout');
+      if(!Session::has('client')){
+        return view('client.login');
+      }
+      $categories = category::all();
+        return view('client.checkout')->with('categories',$categories);
     }
     
     public function contact(){
